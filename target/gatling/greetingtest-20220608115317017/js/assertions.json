@@ -1,0 +1,10 @@
+{
+  "simulation": "simulations.GreetingTest",
+  "simulationId": "greetingtest",
+  "start": 1654689197017,
+  "description": "",
+  "scenarios": ["JSON"],
+  "assertions": [
+
+  ]
+}

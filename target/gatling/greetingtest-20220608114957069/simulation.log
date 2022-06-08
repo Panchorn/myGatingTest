@@ -1,0 +1,4 @@
+RUN	simulations.GreetingTest	greetingtest	1654688997069	 	3.7.6
+USER	JSON	START	1654688999071
+REQUEST		greeting api	1654688999092	1654688999109	KO	jsonPath($.status).find.is(aa), but actually found Hello from RESTEasy Reactive
+USER	JSON	END	1654688999167

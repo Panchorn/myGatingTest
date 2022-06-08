@@ -1,0 +1,16 @@
+RUN	simulations.GreetingTest	greetingtest	1654688942277	 	3.7.6
+USER	JSON	START	1654688943770
+REQUEST		greeting api	1654688943788	1654688943815	KO	jmesPath(status).find.is(aa), but actually found Hello from RESTEasy Reactive
+USER	JSON	END	1654688943920
+USER	JSON	START	1654688944761
+REQUEST		greeting api	1654688944762	1654688944768	KO	jmesPath(status).find.is(aa), but actually found Hello from RESTEasy Reactive
+USER	JSON	END	1654688944769
+USER	JSON	START	1654688945760
+REQUEST		greeting api	1654688945761	1654688945765	KO	jmesPath(status).find.is(aa), but actually found Hello from RESTEasy Reactive
+USER	JSON	END	1654688945766
+USER	JSON	START	1654688946755
+REQUEST		greeting api	1654688946756	1654688946761	KO	jmesPath(status).find.is(aa), but actually found Hello from RESTEasy Reactive
+USER	JSON	END	1654688946763
+USER	JSON	START	1654688947756
+REQUEST		greeting api	1654688947757	1654688947761	KO	jmesPath(status).find.is(aa), but actually found Hello from RESTEasy Reactive
+USER	JSON	END	1654688947762
