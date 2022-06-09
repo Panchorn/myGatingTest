@@ -5,6 +5,8 @@ import io.gatling.core.structure._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
+import scala.concurrent.duration.DurationInt
+
 class GreetingTest extends Simulation {
 
   val httpProtocol: HttpProtocolBuilder = http
@@ -23,13 +25,13 @@ class GreetingTest extends Simulation {
   setUp(
     scn.inject(
       /*run only once*/
-      atOnceUsers(1)
+      //atOnceUsers(1)
 
       /*run only once in xx sec*/
       //constantUsersPerSec(1).during(5.seconds),
 
       /*run as concurrent in xx sec*/
-      //constantConcurrentUsers(1).during(5.seconds)
+      constantConcurrentUsers(1).during(5.seconds)
 
       /*run as concurrent and hold for a while (with ramp up)*/
       //rampUsersPerSec(1).to(50).during(1.minutes),
