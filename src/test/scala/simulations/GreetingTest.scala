@@ -1,13 +1,19 @@
 package simulations
 
+import ch.qos.logback.classic.{Level}
 import io.gatling.core.Predef._
 import io.gatling.core.structure._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
+import org.slf4j
+import org.slf4j.LoggerFactory
 
 import scala.concurrent.duration.DurationInt
 
 class GreetingTest extends Simulation {
+
+  val logger: slf4j.Logger = LoggerFactory.getLogger(classOf[GreetingTest])
+
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl("http://localhost:8080")
@@ -21,7 +27,7 @@ class GreetingTest extends Simulation {
         .check(jsonPath("$.status").is("Hello from RESTEasy Reactive"))
     )
 
-  before(println("---- Start ----"))
+  before(logger.info("---- Start ----"))
   setUp(
     scn.inject(
       /*run only once*/
@@ -39,6 +45,6 @@ class GreetingTest extends Simulation {
       //rampUsersPerSec(50).to(1).during(1.minutes)
     )
   ).protocols(httpProtocol)
-  after(println("---- Done ----"))
+  after(logger.info("---- Done ----"))
 
 }
